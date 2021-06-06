@@ -111,10 +111,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 CategoryInterface categoryInterface = database.categoryInterface();
-                categoryInterface.insert(new Category("Все"));
-                categoryInterface.insert(new Category("Смартфоны"));
-                categoryInterface.insert(new Category("Ноутбуки"));
-                categoryInterface.insert(new Category("Видеокарты"));
+                categoryInterface.insert(new Category("Все", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Republic_Of_Korea_Broadcasting-TV_Rating_System%28ALL%29.svg/1200px-Republic_Of_Korea_Broadcasting-TV_Rating_System%28ALL%29.svg.png"));
+                categoryInterface.insert(new Category("Смартфоны", "https://png.pngtree.com/png-clipart/20190920/original/pngtree-hand-drawn-smartphone-illustration-png-image_4649731.jpg"));
+                categoryInterface.insert(new Category("Ноутбуки", "https://www.ixbt.com/img/n1/news/2019/0/2/Notebook-9-Pro_main_1_large.jpg"));
+                categoryInterface.insert(new Category("Видеокарты", "https://3dnews.ru/assets/external/illustrations/2020/08/26/1019079/gpumainjpr.jpg"));
                 getCategories();
             }
         });
@@ -126,15 +126,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 ProductInterface productInterface = database.productInterface();
-                productInterface.insert(new Product("Xiaomi Mi 9T Pro", 2));
-                productInterface.insert(new Product("Samsung Galaxy S21", 2));
-                productInterface.insert(new Product("Xiaomi Mi 11", 2));
-                productInterface.insert(new Product("Lenovo IdeaPad 520", 3));
-                productInterface.insert(new Product("Asus TUF", 3));
-                productInterface.insert(new Product("HP Pavilion Gaming 15", 3));
-                productInterface.insert(new Product("Nvidia GeForce GTX 1050 TI", 4));
-                productInterface.insert(new Product("AMD Radeon RX580", 4));
-                productInterface.insert(new Product("Intel HD Graphics 4000", 4));
+                productInterface.insert(new Product("Xiaomi Mi 9T Pro", 2, "https://i01.appmifile.com/webfile/globalimg/Echo/blue-Mi9T-Pro.png"));
+                productInterface.insert(new Product("Samsung Galaxy S21", 2, "https://images.samsung.com/is/image/samsung/p6pim/ru/galaxy-s21/gallery/ru-galaxy-s21-5g-g991-sm-g991bzvdser-368806360?$720_576_PNG$"));
+                productInterface.insert(new Product("Xiaomi Mi 11", 2, "https://avatars.mds.yandex.net/get-mpic/4055817/img_id3050302773406756013.jpeg/13hq"));
+                productInterface.insert(new Product("Lenovo IdeaPad 520", 3, "https://www.notebookcheck-ru.com/uploads/tx_nbc2/2001535837.jpeg"));
+                productInterface.insert(new Product("Asus TUF", 3, "https://www.notebookcheck-ru.com/uploads/tx_nbc2/asus-tuf-gaming-a15-fx506iu-bq225-amd-ryzen-7-4800h-16gb-512gb-ssd-gtx1660ti-156_03.jpg"));
+                productInterface.insert(new Product("HP Pavilion Gaming 15", 3, "https://www.notebookcheck-ru.com/uploads/tx_nbc2/4zu3_HP_Pavilion_Gaming_15_ec.jpg"));
+                productInterface.insert(new Product("Nvidia GeForce GTX 1050 TI", 4, "https://ae01.alicdn.com/kf/H26a47a69955c4ea4a204415e0b0d2f2bG/Gigabyte-GTX-1050-Ti-CN-4-NVIDIA-GeForce-GTX-1050Ti-GDDR5-128bit-PCI.jpg"));
+                productInterface.insert(new Product("AMD Radeon RX580", 4, "https://www.ixbt.com/video4/images/polaris20/rx580-front.jpg"));
+                productInterface.insert(new Product("Intel HD Graphics 4000", 4, "https://driverslab.ru/images/post/Intel_HD_4000_Graphics.jpg"));
                 getProducts();
             }
         });

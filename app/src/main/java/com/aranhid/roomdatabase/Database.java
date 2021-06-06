@@ -4,8 +4,10 @@ import android.content.Context;
 
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.migration.Migration;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@androidx.room.Database(entities = {Category.class, Product.class}, version = 1)
+@androidx.room.Database(entities = {Category.class, Product.class}, version = 2)
 public abstract class Database extends RoomDatabase{
     public abstract CategoryInterface categoryInterface();
     public abstract ProductInterface productInterface();
@@ -19,6 +21,7 @@ public abstract class Database extends RoomDatabase{
         }
         return INSTANCE;
     }
+
     public static Database create(Context context, boolean memoryOnly) {
         RoomDatabase.Builder<Database> builder;
         if (memoryOnly) {
@@ -27,6 +30,15 @@ public abstract class Database extends RoomDatabase{
         else {
             builder = Room.databaseBuilder(context.getApplicationContext(), Database.class, DB_NAME);
         }
-        return builder.build();
+        return builder.addMigrations(MIGRATION_1_2).build();
     }
+
+    static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE categories ADD COLUMN pictureUrl TEXT");
+            database.execSQL("ALTER TABLE products ADD COLUMN pictureUrl TEXT");
+        }
+    };
 }
+

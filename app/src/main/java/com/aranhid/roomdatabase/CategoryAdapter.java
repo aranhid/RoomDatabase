@@ -4,7 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -34,6 +37,8 @@ public class CategoryAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         Category category = categories.get(position);
         convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        ImageView picture = convertView.findViewById(R.id.picture);
+        Picasso.get().load(category.pictureUrl).into(picture);
         TextView name = convertView.findViewById(R.id.name);
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

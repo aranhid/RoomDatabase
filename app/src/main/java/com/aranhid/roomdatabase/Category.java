@@ -14,15 +14,18 @@ public class Category {
     int _id;
 
     String name;
+    String pictureUrl;
 
-    public Category(int _id, String name) {
+    public Category(int _id, String name, String pictureUrl) {
         this._id = _id;
         this.name = name;
+        this.pictureUrl = pictureUrl;
     }
 
     @Ignore
-    public  Category (String name) {
+    public  Category (String name, String pictureUrl) {
         this.name = name;
+        this.pictureUrl = pictureUrl;
     }
 
     @Override

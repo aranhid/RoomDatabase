@@ -15,17 +15,20 @@ public class Product {
 
     String name;
     int categoty_id;
+    String pictureUrl;
 
-    public Product(int _id, String name, int categoty_id) {
+    public Product(int _id, String name, int categoty_id, String pictureUrl) {
         this._id = _id;
         this.name = name;
         this.categoty_id = categoty_id;
+        this.pictureUrl = pictureUrl;
     }
 
     @Ignore
-    public  Product (String name, int categoty_id) {
+    public  Product (String name, int categoty_id, String pictureUrl) {
         this.name = name;
         this.categoty_id = categoty_id;
+        this.pictureUrl = pictureUrl;
     }
 
     @Override
